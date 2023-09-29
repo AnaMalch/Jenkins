@@ -8,17 +8,17 @@ pipeline {
   }
   options {
       buildDiscarder logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10')
-      timestamps
+      timestamps()
   }
   stages {
       stage('First step') {
           steps {
-              cmd 'ping mail.ru'
+              powershell 'ping mail.ru'
           }
       }
       stage('Second step') {
           steps {
-              cmd 'ping mtkp.bmstu.ru'
+              powershell 'ping mtkp.bmstu.ru'
           }
       }
    } 
