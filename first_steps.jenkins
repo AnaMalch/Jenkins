@@ -13,12 +13,12 @@ pipeline {
   stages {
       stage('First step') {
           steps {
-              powershell 'ping mail.ru'
+              cmd 'ping mail.ru'
           }
       }
       stage('Second step') {
           steps {
-              powershell 'ping mtkp.bmstu.ru'
+              cmd 'ping mtkp.bmstu.ru'
           }
       }
    } 
