@@ -5,20 +5,20 @@ properties([disableConcurrentBuilds()])
 pipeline {
   agent {
       label 'master'
-      }
+  }
   options {
-      buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+      buildDiscarder logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10')
       timestamps()
   }
   stages {
       stage('First step') {
           steps {
-              powershell 'ping mail.ru/'
+              powershell 'ping mail.ru'
           }
       }
       stage('Second step') {
           steps {
-              powershell 'ping https://mtkp.bmstu.ru/'
+              powershell 'ping mtkp.bmstu.ru'
           }
       }
    } 
